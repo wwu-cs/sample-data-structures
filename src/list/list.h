@@ -10,60 +10,63 @@ using namespace std;
 // Can change type stored but assumed int here.
 typedef int ListItemType;
 
+/* Needed: find, constructor?, isfull. */
+
 /* *** ODSATag: ListADT *** */
 /* *** ODSATag: ListADT1 *** */
 // List class ADT.
 class List { // List class ADT
 public:
   // Destructor
-  virtual ~ List () =default;
+  virtual ~ List () =default; // YES- destructor
 
   // Remove all contents from the list, so it is once again empty
-  virtual void clear() =0;
+  virtual void clear() =0; // YES- clear
 
   // Insert "it" at the current location
   // The client must ensure that the list's capacity is not exceeded
-  virtual bool insert(const ListItemType& it) =0;
+  virtual bool insert(const ListItemType& it) =0; // NO
 
   // Append "it" at the end of the list
   // The client must ensure that the list's capacity is not exceeded
-  virtual bool append(const ListItemType& it) =0;
+  virtual bool append(const ListItemType& it) =0; // YES- add
 
-  // Remove and return the current element
+  // Remove and return the current element // YES- remove
   virtual ListItemType remove() =0;
 /* *** ODSAendTag: ListADT1 *** */
 
+// Will implement later, not necessary right now.
 /* *** ODSATag: ListADT2 *** */
   // Set the current position to the start of the list
-  virtual void moveToStart() =0;
+  virtual void moveToStart() =0; // NO
 
   // Set the current position to the end of the list
-  virtual void moveToEnd() =0;
+  virtual void moveToEnd() =0; // NO
 
   // Move the current position one step left, no change if already at beginning
-  virtual void prev() =0;
+  virtual void prev() =0; // NO
 
   // Move the current position one step right, no change if already at end
-  virtual void next() =0;
+  virtual void next() =0; // NO
 
   // Return the number of elements in the list
-  virtual int length() =0;
+  virtual int length() =0; // NO
 /* *** ODSAendTag: ListADT2 *** */
 
 /* *** ODSATag: ListADT3 *** */
   // Return the position of the current element
-  virtual int currPos() =0;
+  virtual int currPos() =0; // NO
 
   // Set the current position to "pos"
-  virtual bool moveToPos(int pos) =0;
+  virtual bool moveToPos(int pos) =0; // NO
 
   // Return true if current position is at end of the list
-  virtual bool isAtEnd() =0;
+  virtual bool isAtEnd() =0; // NO
 
   // Return the current element
-  virtual ListItemType getValue() =0;
+  virtual ListItemType getValue() =0; // YES- print one element, do we want to print whole list?
 
-  virtual bool isEmpty() =0;
+  virtual bool isEmpty() =0; // YES- isempty
 };
 /* *** ODSAendTag: ListADT3 *** */
 /* *** ODSAendTag: ListADT *** */
